@@ -1,9 +1,17 @@
 import Vue from 'vue'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import $config from '@/config/index'
 
 Vue.config.productionTip = false
+
+// this.$config
+Vue.prototype.$config = Object.freeze($config)
+
+Vue.use(ElementUI)
 
 new Vue({
   router,
