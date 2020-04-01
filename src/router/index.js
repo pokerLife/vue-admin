@@ -1,22 +1,30 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-
+// 生产环境开启路由懒加载
+const _import = require('@/utils/util.import.' + process.env.NODE_ENV)
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: '主页',
+    component: _import('home/Index.vue')
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/admin/:appId',
+    name: '系统首页',
+    component: _import('layout/Index.vue'),
+    children: [
+      {
+        name: 'test',
+        path: 'test',
+        component: _import('modules/role/test.vue')
+      },
+      {
+        path: 'test2',
+        component: _import('modules/role/test2.vue')
+      }
+    ]
   }
 ]
 

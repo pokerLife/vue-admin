@@ -9,20 +9,34 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+body,html,#app {
+  height: 100%;
+  width: 100%;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+*, ::after, ::before {
+    box-sizing: border-box;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+a {
+  text-decoration: none;
+}
+
+ul>li {
+  list-style: none;
+}
+
+ul,li {
+  margin: 0;
+  padding: 0;
+}
+
+/** 窗口进度条样式修改 */
+#nprogress .bar {
+  background: #2fc8ad !important;
+  height: 3px !important;
 }
 </style>

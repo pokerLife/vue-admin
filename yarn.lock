@@ -820,6 +820,35 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@fortawesome/fontawesome-common-types@^0.2.28":
+  version "0.2.28"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.28.tgz#1091bdfe63b3f139441e9cba27aa022bff97d8b2"
+  integrity sha512-gtis2/5yLdfI6n0ia0jH7NJs5i/Z/8M/ZbQL6jXQhCthEOe5Cr5NcQPhgTvFxNOtURE03/ZqUcEskdn2M+QaBg==
+
+"@fortawesome/fontawesome-free@^5.13.0":
+  version "5.13.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.13.0.tgz#fcb113d1aca4b471b709e8c9c168674fbd6e06d9"
+  integrity sha512-xKOeQEl5O47GPZYIMToj6uuA2syyFlq9EMSl2ui0uytjY9xbe8XS0pexNWmxrdcCyNGyDmLyYw5FtKsalBUeOg==
+
+"@fortawesome/fontawesome-svg-core@^1.2.28":
+  version "1.2.28"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.28.tgz#e5b8c8814ef375f01f5d7c132d3c3a2f83a3abf9"
+  integrity sha512-4LeaNHWvrneoU0i8b5RTOJHKx7E+y7jYejplR7uSVB34+mp3Veg7cbKk7NBCLiI4TyoWS1wh9ZdoyLJR8wSAdg==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.28"
+
+"@fortawesome/free-solid-svg-icons@^5.13.0":
+  version "5.13.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.13.0.tgz#44d9118668ad96b4fd5c9434a43efc5903525739"
+  integrity sha512-IHUgDJdomv6YtG4p3zl1B5wWf9ffinHIvebqQOmV3U+3SLw4fC+LUCCgwfETkbTtjy5/Qws2VoVf6z/ETQpFpg==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.28"
+
+"@fortawesome/vue-fontawesome@^0.1.9":
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/@fortawesome/vue-fontawesome/-/vue-fontawesome-0.1.9.tgz#d3af6d4e50f337327de90447fe35fa1e117a2fbe"
+  integrity sha512-h/emhmZz+DfB2zOGLWawNwXq82UYhn9waTfUjLLmeaIqtnIyNt6kYlpQT/vzJjLZRDRvY2IEJAh1di5qKpKVpA==
+
 "@hapi/address@2.x.x":
   version "2.1.4"
   resolved "https://registry.npm.taobao.org/@hapi/address/download/@hapi/address-2.1.4.tgz?cache=0&sync_timestamp=1584145510980&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40hapi%2Faddress%2Fdownload%2F%40hapi%2Faddress-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"
@@ -1938,6 +1967,13 @@ aws4@^1.8.0:
   resolved "https://registry.npm.taobao.org/aws4/download/aws4-1.9.1.tgz#7e33d8f7d449b3f673cd72deb9abdc552dbe528e"
   integrity sha1-fjPY99RJs/ZzzXLeuavcVS2+Uo4=
 
+axios@^0.19.2:
+  version "0.19.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
+  integrity sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
+  dependencies:
+    follow-redirects "1.5.10"
+
 babel-code-frame@^6.26.0:
   version "6.26.0"
   resolved "https://registry.npm.taobao.org/babel-code-frame/download/babel-code-frame-6.26.0.tgz#63fd43f7dc1e3bb7ce35947db8fe369a3f58c74b"
@@ -2836,6 +2872,11 @@ combined-stream@^1.0.6, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
+commander@*:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-5.0.0.tgz#dbf1909b49e5044f8fdaf0adc809f0c0722bdfd0"
+  integrity sha512-JrDGPAKjMGSP1G0DUoaceEJ3DZgAfr/q6X7FVk4+U5KxUSKviYGM2k6zWkfyyBHy5rAtzgYJFa1ro2O9PtoxwQ==
+
 commander@2.17.x:
   version "2.17.1"
   resolved "https://registry.npm.taobao.org/commander/download/commander-2.17.1.tgz#bd77ab7de6de94205ceacc72f1716d29f20a77bf"
@@ -3336,15 +3377,27 @@ data-urls@^1.0.0, data-urls@^1.1.0:
     whatwg-mimetype "^2.2.0"
     whatwg-url "^7.0.0"
 
+dayjs@^1.8.23:
+  version "1.8.23"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.8.23.tgz#07b5a8e759c4d75ae07bdd0ad6977f851c01e510"
+  integrity sha512-NmYHMFONftoZbeOhVz6jfiXI4zSiPN6NoVWJgC0aZQfYVwzy/ZpESPHuCcI0B8BUMpSJQ08zenHDbofOLKq8hQ==
+
 de-indent@^1.0.2:
   version "1.0.2"
   resolved "https://registry.npm.taobao.org/de-indent/download/de-indent-1.0.2.tgz#b2038e846dc33baa5796128d0804b455b8c1e21d"
   integrity sha1-sgOOhG3DO6pXlhKNCAS0VbjB4h0=
 
-debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.8, debug@^2.6.9:
+debug@2.6.9, debug@^2.1.3, debug@^2.2.0, debug@^2.3.3, debug@^2.6.8, debug@^2.6.9:
   version "2.6.9"
   resolved "https://registry.npm.taobao.org/debug/download/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   integrity sha1-XRKFFd8TT/Mn6QpMk/Tgd6U2NB8=
+  dependencies:
+    ms "2.0.0"
+
+debug@=3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
+  integrity sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
   dependencies:
     ms "2.0.0"
 
@@ -3571,6 +3624,13 @@ dom-serializer@0:
   dependencies:
     domelementtype "^2.0.1"
     entities "^2.0.0"
+
+dom7@^2.1.3:
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/dom7/-/dom7-2.1.3.tgz#a736f9c3bfbc4ca039a81cd095f97d1d7f3de19c"
+  integrity sha512-QTxHHDox+M6ZFz1zHPAHZKI3JOHY5iY4i9BK2uctlggxKQwRhO3q3HHFq1BKsT25Bm/ySSj70K6Wk/G4bs9rMQ==
+  dependencies:
+    ssr-window "^1.0.1"
 
 domain-browser@^1.1.1:
   version "1.2.0"
@@ -4488,6 +4548,13 @@ flush-write-stream@^1.0.0:
   dependencies:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
+
+follow-redirects@1.5.10:
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
+  integrity sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==
+  dependencies:
+    debug "=3.1.0"
 
 follow-redirects@^1.0.0:
   version "1.10.0"
@@ -6205,6 +6272,13 @@ jsonfile@^4.0.0:
   optionalDependencies:
     graceful-fs "^4.1.6"
 
+jsonp@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/jsonp/-/jsonp-0.2.1.tgz#a65b4fa0f10bda719a05441ea7b94c55f3e15bae"
+  integrity sha1-pltPoPEL2nGaBUQep7lMVfPhW64=
+  dependencies:
+    debug "^2.1.3"
+
 jsprim@^1.2.2:
   version "1.4.1"
   resolved "https://registry.npm.taobao.org/jsprim/download/jsprim-1.4.1.tgz#313e66bc1e5cc06e438bc1b7499c2e5c56acb6a2"
@@ -6732,6 +6806,13 @@ mkdirp@0.x, mkdirp@^0.5.1, mkdirp@^0.5.3, mkdirp@~0.5.1:
   dependencies:
     minimist "^1.2.5"
 
+mockjs@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/mockjs/-/mockjs-1.1.0.tgz#e6a0c378e91906dbaff20911cc0273b3c7d75b06"
+  integrity sha512-eQsKcWzIaZzEZ07NuEyO4Nw65g0hdWAyurVol1IPl1gahRwY+svqzfgfey8U8dahLwG44d6/RwEzuK52rSa/JQ==
+  dependencies:
+    commander "*"
+
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npm.taobao.org/move-concurrently/download/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -6979,6 +7060,11 @@ normalize-wheel@^1.0.1:
   resolved "https://registry.yarnpkg.com/normalize-wheel/-/normalize-wheel-1.0.1.tgz#aec886affdb045070d856447df62ecf86146ec45"
   integrity sha1-rsiGr/2wRQcNhWRH32Ls+GFG7EU=
 
+normalize.css@^8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-8.0.1.tgz#9b98a208738b9cc2634caacbc42d131c97487bf3"
+  integrity sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==
+
 npm-run-path@^2.0.0:
   version "2.0.2"
   resolved "https://registry.npm.taobao.org/npm-run-path/download/npm-run-path-2.0.2.tgz#35a9232dfa35d7067b4cb2ddf2357b1871536c5f"
@@ -6992,6 +7078,11 @@ npm-run-path@^4.0.0:
   integrity sha1-t+zR5e1T2o43pV4cImnguX7XSOo=
   dependencies:
     path-key "^3.0.0"
+
+nprogress@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/nprogress/-/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
+  integrity sha1-y480xTIT2JVyP8urkH6UIq28r7E=
 
 nth-check@^1.0.2, nth-check@~1.0.1:
   version "1.0.2"
@@ -8999,6 +9090,11 @@ sshpk@^1.7.0:
     safer-buffer "^2.0.2"
     tweetnacl "~0.14.0"
 
+ssr-window@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/ssr-window/-/ssr-window-1.0.1.tgz#30752a6a4666e7767f0b7e6aa6fc2fdbd0d9b369"
+  integrity sha512-dgFqB+f00LJTEgb6UXhx0h+SrG50LJvti2yMKMqAgzfUmUXZrLSv2fjULF7AWGwK25EXu8+smLR3jYsJQChPsg==
+
 ssri@^6.0.1:
   version "6.0.1"
   resolved "https://registry.npm.taobao.org/ssri/download/ssri-6.0.1.tgz#2a3c41b28dd45b62b63676ecb74001265ae9edd8"
@@ -9281,6 +9377,14 @@ svgo@^1.0.0:
     stable "^0.1.8"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
+
+swiper@^5.3.6:
+  version "5.3.6"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-5.3.6.tgz#102b7f8145d734ec4c30e04602160382356b5948"
+  integrity sha512-FUz50g6RuvGAuXQWmR5lRPoA129leRUZ/p57ckr8+P5kR7VktElVQ47JGmWD86mOJCFfvMhUf0hinyC5UFL5iw==
+  dependencies:
+    dom7 "^2.1.3"
+    ssr-window "^1.0.1"
 
 symbol-tree@^3.2.2:
   version "3.2.4"
@@ -9838,6 +9942,11 @@ vm-browserify@^1.0.1:
   version "1.1.2"
   resolved "https://registry.npm.taobao.org/vm-browserify/download/vm-browserify-1.1.2.tgz?cache=0&sync_timestamp=1572870717730&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvm-browserify%2Fdownload%2Fvm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha1-eGQcSIuObKkadfUR56OzKobl3aA=
+
+vue-awesome-swiper@^4.0.4:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/vue-awesome-swiper/-/vue-awesome-swiper-4.0.4.tgz#59f9a5a7b04c9e3651762abc793440d67c8a4047"
+  integrity sha512-yzp93S1DBucR16ouzKn7QBQojqGX6yHPEuVIioYp4U4Eyk0rxe0RRVQcUnZXi05bM5MwCvCKXtgaY31N5tTi7g==
 
 vue-eslint-parser@^7.0.0:
   version "7.0.0"
