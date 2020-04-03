@@ -12,7 +12,7 @@ const fileName = 'directoryList.md'
 const copyPath = 'docs/tree.md'
 
 console.log(`Generate file path: ${path.resolve(copyPath)}`)
-// 先安装 npm install -g
+// 先安装 npm install -g mddir
 exec('mddir', function () {
   fs.writeFileSync(path.resolve(copyPath), fs.readFileSync(fileName))
   fs.unlink(fileName, () => { })
