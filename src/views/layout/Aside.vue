@@ -1,22 +1,25 @@
 <template>
    <el-aside width="270px" class="aside">
-      <header class="system">
+      <header  @click="showAll = !showAll" class="system">
         <img class="system-icon" src="../../assets/home/img/system/sys-flow.png" alt="">
         <span class="system-title">系统管理</span>
         <i class="system-list"></i>
+        <transition name="el-fade-in-linear">
+          <AllSystem v-if="showAll"/>
+        </transition>
       </header>
       <ul class="menu">
         <li class="menu-item has-treeview" v-for="menu in menuList" :key="menu.id" :class="{menu_open : menu.isOpen}">
           <a class="menu-link" href="javascript:;" @click="toggle(menu)">
-            <font-awesome-icon class="menu-icon" :icon="['fas', 'arrow-circle-right']" />
+            <i class="fa fa-arrow-circle-right menu-icon" aria-hidden="true"></i>
             <p v-text="menu.name"></p>
             <i class="menu-right"></i>
           </a>
           <el-collapse-transition>
             <ul class="menu-treeview" v-show="menu.isOpen">
-              <li class="treeview-item" v-for="treeview in menu.treeview" :key="treeview.id">
+              <li class="treeview-item" :class="{ active: treeview.isActive }" v-for="treeview in menu.treeview" :key="treeview.id">
                 <a @click="forward(treeview)" class="menu-link">
-                  <font-awesome-icon class="menu-icon" :icon="['fas', 'align-justify']" />
+                  <i class="fa fa-bars menu-icon" aria-hidden="true"></i>
                   <p v-text="treeview.name"></p>
                 </a>
               </li>
@@ -28,10 +31,15 @@
 </template>
 
 <script>
+import AllSystem from '@/components/admin/AllSystem'
 export default {
   name: 'Aside',
+  components: {
+    AllSystem
+  },
   data () {
     return {
+      showAll: false,
       menuList: [
         {
           id: '1',
@@ -42,13 +50,15 @@ export default {
               id: '1-1',
               name: '系统用户管理',
               isActive: false,
-              path: '/admin/role/test'
+              path: '/admin/test',
+              pId: '1'
             },
             {
               id: '1-2',
               name: '行政机构管理管理',
               isActive: false,
-              path: '/admin/role/test2'
+              path: '/admin/test2',
+              pId: '1'
             }
           ]
         },
@@ -61,13 +71,15 @@ export default {
               id: '2-1',
               name: '首页通知公告',
               isActive: false,
-              path: ''
+              path: '/admin/test3',
+              pId: '2'
             },
             {
               id: '2-2',
               name: '系统通知公告',
               isActive: false,
-              path: ''
+              path: '/admin/test4',
+              pId: '2'
             }
           ]
         },
@@ -80,8 +92,28 @@ export default {
       ]
     }
   },
+  computed: {
+    target () {
+      return this.$store.getters['app/queryTarget']
+    }
+  },
+  watch: {
+    target: {
+      handler (newVal, oldVal) {
+        const current = newVal.find(v => v.isActive === true)
+        const parent = this.menuList.find(v => v.id === current.pId)
+        if (parent.isOpen !== true) {
+          this.menuList.forEach(v => {
+            v.isOpen = false
+          })
+          parent.isOpen = true
+        }
+      },
+      deep: true
+    }
+  },
   mounted () {
-
+    this.openDefault()
   },
   methods: {
     /**
@@ -102,8 +134,17 @@ export default {
      * @param {Object} 当前子菜单
      */
     forward (treeview) {
+      if (!treeview.path) return
       this.$store.dispatch('app/addTarget', treeview)
       this.$router.push({ path: treeview.path })
+    },
+    /**
+     * 默认页面
+     */
+    openDefault () {
+      const first = this.menuList[0].treeview[0]
+      this.$store.dispatch('app/addTarget', first)
+      this.$router.push({ path: first.path })
     }
   }
 }
@@ -122,6 +163,7 @@ export default {
     background: rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
+    cursor: pointer;
     &-icon {
       width: 45px;
       height: 45px;
@@ -133,6 +175,7 @@ export default {
       color: #fff;
     }
     &-list {
+      position: relative;
       width: 16px;
       height: 16px;
       margin-left: auto;
@@ -183,6 +226,7 @@ export default {
     .treeview-item {
       padding-left: 20px;
       border-top: 1px solid rgb(255, 255, 255,0.1);
+      cursor: pointer;
     }
     .menu-link {
       height: 40px;
@@ -194,7 +238,7 @@ export default {
       font-size: 15px;
     }
     // 子菜单激活
-    .treeview-item:hover, .active {
+    .active {
       background: linear-gradient(90deg, #296dd8, #2fc8ad);
       box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.21);
     }

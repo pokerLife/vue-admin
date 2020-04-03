@@ -4,6 +4,14 @@ import VueRouter from 'vue-router'
 const _import = require('@/utils/util.import.' + process.env.NODE_ENV)
 Vue.use(VueRouter)
 
+/**
+ * 重写路由的push方法
+ */
+const routerPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push (location) {
+  return routerPush.call(this, location).catch(error => error)
+}
+
 const routes = [
   {
     path: '/',
@@ -11,18 +19,25 @@ const routes = [
     component: _import('home/Index.vue')
   },
   {
-    path: '/admin/:appId',
+    path: '/admin',
     name: '系统首页',
     component: _import('layout/Index.vue'),
     children: [
       {
-        name: 'test',
         path: 'test',
         component: _import('modules/role/test.vue')
       },
       {
         path: 'test2',
         component: _import('modules/role/test2.vue')
+      },
+      {
+        path: 'test3',
+        component: _import('modules/role/test3.vue')
+      },
+      {
+        path: 'test4',
+        component: _import('modules/role/test4.vue')
       }
     ]
   }

@@ -25,19 +25,19 @@ export default {
         {
           id: '1',
           name: '系统管理',
-          href: '/admin/mananger',
+          href: '/admin',
           icon: 'https://s1.ax1x.com/2020/03/28/GAOwjI.png'
         },
         {
           id: '2',
           name: '年终管理',
-          href: '/admin/yearEnd',
+          href: '/admin',
           icon: 'https://s1.ax1x.com/2020/03/28/GAODDP.png'
         },
         {
           id: '3',
           name: '交流轮岗管理',
-          href: '/admin/exchange',
+          href: '/admin',
           icon: 'https://s1.ax1x.com/2020/03/28/GAOa3d.png'
         },
         {

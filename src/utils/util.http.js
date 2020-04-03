@@ -5,7 +5,7 @@ const jsonP = require('jsonp')
 // import $config from '../config/index'
 
 /**
- * @description 封住http请求
+ * @description 封装http请求
  * @author mr_zhaojie
  * @date 2020-03-06
  */

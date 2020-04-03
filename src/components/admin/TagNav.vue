@@ -5,10 +5,10 @@
         <i class="el-icon-d-arrow-left nav-icon"></i>
       </div>
       <ul class="nav-main">
-        <li class="nav-item" :class="{active: tag.isActive}" v-for="tag in tagList" :key="tag.id">
-          <i class="el-icon-document-checked"></i>
+        <li class="nav-item" @click="forward(tag)" :class="{active: tag.isActive}" v-for="tag in tagList" :key="tag.id">
+          <i class="fa fa-file-o" aria-hidden="true"></i>
           <span class="nav-item-text" v-text="tag.name"></span>
-          <font-awesome-icon class="nav-item-right" :icon="['fas', 'times']" />
+          <i class="fa fa-times remove" aria-hidden="true" @click.stop="removeTag(tag)"></i>
         </li>
       </ul>
       <div class="nav-next">
@@ -28,6 +28,39 @@ export default {
   computed: {
     tagList () {
       return this.$store.getters['app/queryTarget']
+    }
+  },
+  methods: {
+    /**
+     * 关闭当前标签
+     * @param {Object} tag 当前标签
+     */
+    removeTag (tag) {
+      const vm = this
+      const tagList = vm.tagList
+      const pos = tagList.findIndex(item => item.id === tag.id)
+      const length = tagList.length
+
+      if (length < 2) return
+      // 默认删除后一个标签
+      if (pos === length - 1) {
+        this.$router.push({ path: tagList[pos - 1].path })
+        vm.$store.dispatch('app/delTarget', tag)
+        return
+      }
+      // 末尾标签删除前一个
+      this.$router.push({ path: tagList[pos + 1].path })
+      vm.$store.dispatch('app/delTarget', tag)
+    },
+
+    /**
+     * 跳转页面
+     * @param {Object} 当前子菜单
+     */
+    forward (tag) {
+      if (!tag.path) return
+      this.$store.dispatch('app/addTarget', tag)
+      this.$router.push({ path: tag.path })
     }
   }
 }
@@ -86,5 +119,9 @@ export default {
     background: linear-gradient(90deg, #296dd8, #2fc8ad);
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.21);
     color: #fff;
+  }
+
+  .remove:hover {
+    transform: scale(1.3);
   }
 </style>
