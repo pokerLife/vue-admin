@@ -1,3 +1,3 @@
-import homeApi from './home/index'
+import homeApi from './modules/home'
 
 export { homeApi }

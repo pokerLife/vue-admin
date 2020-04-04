@@ -5,7 +5,7 @@
         <i class="el-icon-d-arrow-left nav-icon"></i>
       </div>
       <ul class="nav-main">
-        <li class="nav-item" @click="forward(tag)" :class="{active: tag.isActive}" v-for="tag in tagList" :key="tag.id">
+        <li class="nav-item" @click="forward(tag)" :class="{active: tag.isActive}" v-for="tag in tagsList" :key="tag.id">
           <i class="fa fa-file-o" aria-hidden="true"></i>
           <span class="nav-item-text" v-text="tag.name"></span>
           <i class="fa fa-times remove" aria-hidden="true" @click.stop="removeTag(tag)"></i>
@@ -26,8 +26,8 @@ export default {
     }
   },
   computed: {
-    tagList () {
-      return this.$store.getters['app/queryTarget']
+    tagsList () {
+      return this.$store.getters['tags/tags']
     }
   },
   methods: {
@@ -37,20 +37,20 @@ export default {
      */
     removeTag (tag) {
       const vm = this
-      const tagList = vm.tagList
-      const pos = tagList.findIndex(item => item.id === tag.id)
-      const length = tagList.length
+      const tagsList = vm.tagsList
+      const pos = tagsList.findIndex(item => item.id === tag.id)
+      const length = tagsList.length
 
       if (length < 2) return
       // 默认删除后一个标签
       if (pos === length - 1) {
-        this.$router.push({ path: tagList[pos - 1].path })
-        vm.$store.dispatch('app/delTarget', tag)
+        this.$router.push({ path: tagsList[pos - 1].path })
+        vm.$store.dispatch('tags/delTags', tag)
         return
       }
       // 末尾标签删除前一个
-      this.$router.push({ path: tagList[pos + 1].path })
-      vm.$store.dispatch('app/delTarget', tag)
+      this.$router.push({ path: tagsList[pos + 1].path })
+      vm.$store.dispatch('tags/delTags', tag)
     },
 
     /**
@@ -59,7 +59,7 @@ export default {
      */
     forward (tag) {
       if (!tag.path) return
-      this.$store.dispatch('app/addTarget', tag)
+      this.$store.dispatch('tags/addTags', tag)
       this.$router.push({ path: tag.path })
     }
   }

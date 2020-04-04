@@ -93,12 +93,12 @@ export default {
     }
   },
   computed: {
-    target () {
-      return this.$store.getters['app/queryTarget']
+    tagsList () {
+      return this.$store.getters['tags/tags']
     }
   },
   watch: {
-    target: {
+    tagsList: {
       handler (newVal, oldVal) {
         const current = newVal.find(v => v.isActive === true)
         const parent = this.menuList.find(v => v.id === current.pId)
@@ -135,7 +135,7 @@ export default {
      */
     forward (treeview) {
       if (!treeview.path) return
-      this.$store.dispatch('app/addTarget', treeview)
+      this.$store.dispatch('tags/addTags', treeview)
       this.$router.push({ path: treeview.path })
     },
     /**
@@ -143,7 +143,7 @@ export default {
      */
     openDefault () {
       const first = this.menuList[0].treeview[0]
-      this.$store.dispatch('app/addTarget', first)
+      this.$store.dispatch('tags/addTags', first)
       this.$router.push({ path: first.path })
     }
   }

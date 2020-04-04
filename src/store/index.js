@@ -1,14 +1,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import target from './modules/target'
+import autoImport from '../utils/util.store.import'
 
 Vue.use(Vuex)
 
-const debug = process.env.NODE_ENV !== 'production'
-
 export default new Vuex.Store({
-  modules: {
-    app: target
-  },
-  strict: debug
+  modules: autoImport()
 })
