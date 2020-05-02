@@ -1,5 +1,23 @@
 # vue-admin
 
+## 起步
+
+安装：
+
+``` bash
+yarn install 
+# OR
+npm install
+```
+
+启动项目：
+
+``` bash
+yarn serve
+# OR
+npm run serve
+```
+
 ## 目录结构说明
 
 |-- vue-admin 

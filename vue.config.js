@@ -1,6 +1,6 @@
 const path = require('path')
 const config = {
-  // publicPath: process.env.NODE_ENV === 'production' ? '/vue-admin/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/aluoli/' : '/',
   // outputDir: 'vue-admin',
   devServer: {
     // proxy: 'http://localhost:4000',

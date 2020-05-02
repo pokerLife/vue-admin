@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <router-link to="/"  class="header-logo">
-      江西省教育教师业务管理平台
+      {{ appName }}
     </router-link>
     <span class="header-split"></span>
     <slot name="optional">
@@ -27,6 +27,7 @@ export default {
   },
   data () {
     return {
+      appName: process.env.VUE_APP_NAME
     }
   },
   created () {

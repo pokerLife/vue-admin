@@ -7,7 +7,7 @@
 
 <script>
 import SysWheel from '@/components/home/SysWheel'
-import { homeApi } from '@/api/index'
+
 export default {
   name: 'Footer',
   components: {
@@ -20,7 +20,7 @@ export default {
   },
   beforeCreate () {
     const vm = this
-    homeApi.querySysList().then(result => {
+    vm.$api.querySysList().then(result => {
       vm.sysList = [
         {
           id: '1',

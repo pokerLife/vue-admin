@@ -2,7 +2,7 @@
   <div class="weather">
     <img class="weather-img" v-bind:src="weather.dayPictureUrl" alt="" srcset="">
     <div class="weather-detail">
-      <div class="weather-status">
+      <div class="weather-status" v-if="show">
         {{ weather.weather }}
       </div>
       <div class="weather-temperature">
@@ -14,13 +14,12 @@
 
 <script>
 
-import { homeApi } from '@/api/index'
-
 export default {
   name: 'Weather',
   data () {
     return {
-      weather: {}
+      weather: {},
+      show: false
     }
   },
   created () {
@@ -32,7 +31,7 @@ export default {
      */
     queryAddress () {
       const me = this
-      homeApi.queryAddress({}).then(result => {
+      me.$api.queryAddress({}).then(result => {
         let city = '南昌市'
         if (result.status === '0') {
           city = result.content.address
@@ -48,7 +47,7 @@ export default {
      */
     queryWeather (city) {
       const me = this
-      homeApi.queryWeather(city).then(result => {
+      me.$api.queryWeather(city).then(result => {
         me.weather = result.results[0].weather_data[0]
       })
     }

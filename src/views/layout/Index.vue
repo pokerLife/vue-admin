@@ -3,7 +3,7 @@
     <img src="../../assets/skin/img/bg.png" class="home-bg">
     <el-header height="80px">
         <Header v-slot:optional>
-          待办信息
+
         </Header>
     </el-header>
     <el-container>
