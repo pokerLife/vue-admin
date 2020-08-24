@@ -19,7 +19,7 @@ npm run serve
 ```
 
 ## 目录结构说明
-
+```
 |-- vue-admin 
     |-- .browserslistrc             // 浏览器兼容配置
     |-- .editorconfig               // 编辑器兼容配置
@@ -51,5 +51,5 @@ npm run serve
     |   |-- views                   // 页面视图
     |-- tests                       // 测试
         |-- unit                    // 单元测试
-
+```
 
